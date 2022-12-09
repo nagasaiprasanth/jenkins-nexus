@@ -2,18 +2,11 @@ pipeline {
     agent any
     tools {
         maven "maven"
-    stages {
-        stage("Clone code from GitHub") {
-            steps {
-                script {
-                    git branch: 'main',  url: 'https://github.com/nagasaiprasanth/jenkins-nexus';
-                }
-            }
-        }
+    }
         stage("Maven Build") {
             steps {
                 script {
-                    sh "mvn package -DskipTests=true"
+                    sh "mvn package -DskipTests=true clean package"
                 }
             }
         }
@@ -52,5 +45,4 @@ pipeline {
                 }
             }
         }
-    }
 }
