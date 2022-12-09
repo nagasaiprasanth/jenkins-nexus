@@ -8,7 +8,6 @@ pipeline {
                     sh "mvn package -DskipTests=true clean package"
                 }
             }
-        }
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
@@ -40,10 +39,10 @@ pipeline {
                         );
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
-                    }
-                }
-            }
-        }  
-    }
-}    
-
+                     }
+                 }
+             }
+         }  
+      }
+   }     
+}
