@@ -1,8 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven "Maven"
-    }
+        maven "maven"
         stage("Maven Build") {
             steps {
                 script {
@@ -45,6 +44,6 @@ pipeline {
                 }
             }
         }  
-
     }
+}    
 
