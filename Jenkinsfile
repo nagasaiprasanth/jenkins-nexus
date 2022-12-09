@@ -2,8 +2,6 @@ pipeline {
     agent any
     tools {
         maven "maven"
-   
-    }
     stages {
         stage("Clone code from GitHub") {
             steps {
