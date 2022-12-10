@@ -5,7 +5,7 @@ pipeline {
     }
         stage("Build Maven") {
             steps {
-                  checkout ([$class: 'git scm", branches:[[name: "*/main']], extension:[], user remote configs: [[credentialsId: 'git_repo', url: 'https://github.com/nagasaiprasanth/jenkins-nexus']]
+                  checkout ([$class: 'git scm", branches:[[name: "*/main']], extension:[], user remote configs: [[credentialsId: 'git_repo', url: 'https://github.com/nagasaiprasanth/jenkins-nexus']])
                 
                             sh"mvn -Dmaven.test.failure.ignore=true clean package"
                   }
