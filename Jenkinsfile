@@ -1,10 +1,10 @@
 pipeline {
     agent any
     tools {
-        maven "maven"
+        maven "MAVEN"
     }
     stages {
-        stage("Build maven") {
+        stage("Build Maven") {
             steps {
                   checkout ([$class: 'git scm', branches:[[name: '*/main']], extension:[], userRemoteconfigs: [[credentialsId: 'git_repo', url: 'https://github.com/nagasaiprasanth/jenkins-nexus.git']]])
                 
